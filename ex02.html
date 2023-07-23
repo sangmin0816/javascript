@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1" onclick="fnc1()">화면 출력</button>
+    <button type="button" id="btn2" onclick="fnc2()">요소 출력</button>
+    <button type="button" id="btn3" onclick="fnc3()">콘솔 출력</button>
+    <button type="button" id="btn4" onclick="fnc4()">알림 출력</button>
+    <button type="button" id="btn5" onclick="fnc5()">확인 출력</button>
+    <button type="button" id="btn6" onclick="fnc6()">입력 출력</button>
+    <a href="javascript:none;" id="btn7" onclick="fnc7()">링크1</a>
+    <a href="javascript:none;" id="btn8" onclick="fnc8()">링크2</a>
+    <hr>
+    <div id="res1"></div>
+    <script>
+        function fnc1(){
+            document.write("문서에 출력");
+        }
+        
+        function fnc2(){
+            document.getElementById("res1").innerHTML = "요소에 출력";
+        }
+        
+        function fnc3(){
+            console.log("콘솔에 출력");
+        }
+        
+        function fnc4(){
+            alert("알림창\n출력");
+        }
+        
+        function fnc5(){
+            var love = confirm("Do you Love me?")
+            if(love){
+                document.getElementById("res1").innerHTML = "I Love you Either";
+                res1.style.color = "red";
+            }
+            else{
+                document.getElementById("res1").innerHTML = "Really?";
+            }
+        }
+        
+        function fnc6(){
+            var name = prompt("What is your name?").toUpperCase();
+            var coin = parseInt(prompt("Inset Coin"))*10;
+            document.getElementById("res1").innerHTML = "<ul><li>이름: "+name+"</li><li>Love: "+coin+"</li></ul>";
+        }
+        
+        function fnc7(){
+            alert("인라인 이벤트")
+        }
+        
+        function fnc8(){
+            window.open("ex01.html");
+        }
+    </script>
+
+</body>
+</html>

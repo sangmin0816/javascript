@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {width: 50px; height: 30px;}
+    </style>
+</head>
+<body>
+    <script>
+        console.log(true/false);
+    </script>
+    <div id="display">Let's Calculate</div>
+    <input type="number" size="5" min="1" max="500" id="num1" required="required">
+    <br>
+    <input type="number" size="5" min="1" max="500" id="num2" required="required">
+    <hr>
+    <button id="btn1" onclick="func(1)">+</button>
+    <button id="btn2" onclick="func(2)">*</button>
+    <button id="btn3" onclick="func(3)">-</button>
+    <button id="btn4" onclick="func(4)">/</button>
+    <script>
+        function func(op){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            display = document.getElementById("display");
+            if(num1==""||num2==""){
+                alert("you should check your input");
+            }
+            else if(num2=="0"){
+                alert("Can't divide with 0");
+            }
+            else{
+                num1 = parseInt(num1);
+                num2 = parseInt(num2);
+                switch(op){
+                    case 1:
+                        display.innerText = num1+num2;
+                        break;
+                    case 2:
+                        display.innerText = num1*num2;
+                        break
+                    case 3:
+                        display.innerText = num1-num2;
+                        break;
+                    case 4:
+                        display.innerText = num1/num2;
+                        break;
+                    case 5:
+                        display.innerText = num%num2;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
