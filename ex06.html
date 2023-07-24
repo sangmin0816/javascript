@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 함수</title>
+</head>
+<body>
+    <script>
+        function fnc1(){
+            document.write("매개변수X 리턴X"+"<br>");
+        }
+        function fnc2(x){
+            document.write("매개변수O 리턴X "+x+"<br>");
+        }
+        function fnc3(){
+            document.write("매개변수X 리턴O"+"<br>");
+            return "매개변수X 리턴O";
+        }
+        function fnc4(x){
+            document.write("매개변수O 리턴O "+x+"<br>");
+            return "매개변수O 리턴O";
+        }
+        fnc1()
+        fnc2(2)
+        var var3 = fnc3();
+        var var4 = fnc4(4);
+        console.log(var3+" "+var4)
+
+    </script>
+</body>
+</html>

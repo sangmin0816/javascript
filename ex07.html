@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="lst" id="lst1">
+        <li class="item">80</li>
+        <li class="item">100</li>
+        <li class="item">90</li>
+        <li class="item">95</li>
+        <li class="item">85</li>
+    </ul>
+    
+    <hr>
+    <div id="tot">총점: </div>
+    <div id="avg">평균: </div>
+    <div id="pan">판정: </div>
+    <div id="hak">학점: </div>
+    <div id="remark">참고사항: </div>
+    <div id="sang">과목우수상: </div>
+    <div class="btn-group">
+        <button type="button" style="width: 100px; height: 50px;" onclick="compute()">계산</button>
+    </div>
+
+    <script>
+        function compute(){
+            
+            var items = document.querySelectorAll(".lst .item");
+            var total = document.getElementById("tot");
+            var total_n = 0;
+            for(var i=0; i<items.length; i++){
+                total_n += parseInt(items[i].innerText);
+            }
+            total.innerHTML += total_n;
+
+            var avg = document.getElementById("avg");
+            var avg_n = total_n/5;
+
+            avg.innerHTML += avg_n;
+
+            var pan = document.getElementById("pan");
+            var flag = (avg_n>=70)? true: false;
+            if(flag){
+                for(var i=0; i<items.length; i++){
+                    if(parseInt(items[i].innerText)<80){
+                        flag = false
+                        break;
+                    }
+                }
+            }
+            var pan_n = (flag)? "합격": "불합격";
+            pan.innerHTML += pan_n;
+
+            var hak = document.getElementById("hak");
+            var remark = document.getElementById("remark");
+            
+            var hak_n = "F";
+            var remark_n = "재평가";
+            switch(avg_n/10){
+                case 9:
+                    hak_n = "A";
+                    remark_n = "고득점";
+                    break;
+                case 8:
+                    hak_n = "B";
+                    remark_n = "우수";
+                    break;
+                case 7:
+                    hak_n = "C";
+                    remark_n = "보통";
+                    break;
+            }
+
+            hak.innerHTML+=hak_n;
+            remark.innerHTML+=remark_n;
+
+            var sang = document.getElementById("sang");
+            var sang_n = "해당없음";
+            for(var i=0; i<items.length; i++){
+                if(parseInt(items[i].innerText)==100){
+                    sang_n = "과목우수";
+                    break;
+                }
+            }
+
+            sang.innerHTML+=sang_n;
+
+        }
+
+    </script>
+</body>
+</html>

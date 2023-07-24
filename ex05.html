@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체와 함수</title>
+</head>
+<body>
+    <div id="res"></div>
+    <br>
+    <div id="res2"></div>
+    <script>
+        var man1 = {no: 1, name: "김일일", style: "red", point: 100}; 
+        man1.name = "김맨맨";
+
+        function People(no, name, age, style){
+            this.no = no;
+            this.name = name;
+            this.age = age;
+            this.style = style;
+            this.print = function(){
+                var res = document.getElementById("res");
+                res.innerHTML =  "name "+this.name+" age "+this.age+" style "+this.style;
+            }
+        }
+
+        var st1 = new People(1, "김일일", 30, "yellow");
+        st1.print();
+        st1.family = "돌 김";
+        st1.toString = function(){
+            document.getElementById("res").innerHTML += "<br>"+"family "+this.family+" name "+this.name+" age "+this.age+" style "+this.style;
+        }
+        st1.toString();
+
+        // 객체의 순회
+        for(var field in st1){
+            console.log(field+"\t\t"+st1[field]);
+        }
+
+        console.log("속성 제거")
+        
+        delete st1.family; // 속성 제거
+        for(var field in st1){
+            console.log(field+"\t\t"+st1[field]);
+        }
+    </script>
+</body>
+</html>
