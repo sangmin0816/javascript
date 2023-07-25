@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="lo" name="frm2" onsubmit="return idCheck(this)">
+        <input type="text" id="id" name="id" required>
+        <button type="button" onclick="idCheck()"></button>
+    </form>
+    <script>
+        document.getElementById("id").value = opener.document.getElementById("id");
+        function idCheck(frm){
+
+        }
+        // 왼쪽이 세터, 오른쪽이 게터
+    </script>
+</body>
+</html>

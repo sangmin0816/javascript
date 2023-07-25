@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {width: 100px;height: 20px;border: solid 2px black; margin: 10px;}
+    </style>
+</head>
+<body>
+    <!-- 인라인 이벤트 핸들러 -->
+    <div id="box1" class="box" onclick="clk1()">클릭</div>
+    <div id="box2" class="box" ondblclick="clk2(' 바비')">더블 클릭</div>
+    <!-- 스크립트 이벤트 핸들러 -->
+    <div id="box3" class="box"></div>
+    <div id="box4" class="box" onclick=""></div>
+    <div id="box5" class="box" onclick=""></div>
+    <div id="box6" class="box" onclick=""></div>
+    <div id="box7" class="box" onclick=""></div>
+    <div id="box8" class="box" onclick=""></div>
+    <form action="" id="join_form" onsubmit="return join(this)" method="post">
+        <fieldset>
+            <legend>가입 정보</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <label for="field1">ID</label>
+                        </th>
+                        <td>
+                            <input type="text" name="field1" id="field1" required autofocus>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="field2">PW</label>
+                        </th>
+                        <td>
+                            <input type="password" name="field2" id="field2" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="field3">PW 확인</label>
+                        </th>
+                        <td>
+                            <input type="password" name="field3" id="field3" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="field4">이름</label>
+                        </th>
+                        <td>
+                            <input type="text" name="field4" id="field4" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="field5">이메일</label>
+                        </th>
+                        <td>
+                            <input type="text" name="field5" id="field5" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit">
+                        </td>
+                        <td>
+                            <input type="reset">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        // 이벤트 핸들러 on-으로 시작함
+        function clk1(){
+            alert("혼저옵서예")
+        }
+        
+        function clk2(a){
+            alert("Hello"+a)
+
+        }
+        var box = document.getElementsByClassName("box");
+        for(var i=0; i<box.length; i++){
+            box[i].addEventListener("mouseover", function(e){
+                e.target.innerHTML="하이";
+            })
+        }
+
+        // 폼 입력값에 대한 유효성 검증
+        function join(frm){
+            console.log(frm.field3.value);
+            if(frm.field3.value == frm.field3.value){
+                return true;
+            }
+            else{
+                alret("비밀번호와 비밀번호 확인이 다릅니다");
+                return false;
+            }
+        }
+
+        var form = document.getElementById("join_form");
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 응용 02 - 디지털 시계</title>
+</head>
+<style>
+    @font-face {
+        font-family: digital;
+        src: url("./digital-7.ttf");
+    }
+    * {font-family: digital, sanserif; font-size: 50px;}
+</style>
+<!-- 오전 오후 나오게 -->
+<body style="margin: 30px;">
+    <div id="wrap">
+        <span id="watch"></span>
+    </div>
+    <script>
+        var watch = document.getElementById("watch");
+        function tt(){
+            var today = new Date();
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var seconds = today.getSeconds();
+            var ampm = hour<12?"am":"pm";
+            hour %= 12;
+            hour = hour<10? ("0"+hour):hour;
+            minute = minute<10? ("0"+minute): minute;
+            seconds = seconds<10? ("0"+seconds):seconds;
+            watch.innerHTML = ampm+"&nbsp;&nbsp;&nbsp;"+hour + " : "+minute+" : "+seconds;
+        }
+        tt();
+        var intv = setInterval(function(){tt();}, 1000);
+    </script>
+</body>
+</html>

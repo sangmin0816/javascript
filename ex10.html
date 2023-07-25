@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen&window</title>
+    <style>
+        div[id^="btn"]{border: 2px dashed black; border-radius: 20px; width: fit-content; padding: 20px; margin: 20px; background-color: rgb(248, 206, 213); color: skyblue; font-weight: bolder;}
+    </style>
+</head>
+<body>
+    <div id="btn1">객체속성출력</div>
+    <div id="btn2" onclick="javascript:window.print()">객체속성인쇄</div>
+    <div id="btn3" onclick="javascript:window.close()">닫기</div>
+    <div id="res" style="line-height: 1.8;"></div>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var res = document.getElementById("res");
+        btn1.addEventListener("click", function(){req();});
+        function req(){
+            for(var key in window){
+                res.innerHTML += "<p>"+key+" : "+window[key]+"<\p>";
+            }
+        }
+    </script>
+</body>
+</html>
