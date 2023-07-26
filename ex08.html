@@ -10,6 +10,7 @@
 </head>
 <body>
     <!-- 인라인 이벤트 핸들러 -->
+    <div class="box" onclick="alert('Hello')"  style="background-color: pink;">Alert</div>
     <div id="box1" class="box" onclick="clk1()">클릭</div>
     <div id="box2" class="box" ondblclick="clk2(' 바비')">더블 클릭</div>
     <!-- 스크립트 이벤트 핸들러 -->
@@ -87,7 +88,7 @@
 
         }
         var box = document.getElementsByClassName("box");
-        for(var i=0; i<box.length; i++){
+        for(var i=3; i<box.length; i++){
             box[i].addEventListener("mouseover", function(e){
                 e.target.innerHTML="하이";
             })

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>흐름제어</title>
+    
+</head>
+<body>
+    <div class="btn_group">
+        <button class="btn" id="btn1" onclick="timeoutfunc()">timeoutfunc</button>
+        <button class="btn" id="btn2" onclick="locationprint()">locationprint</button>
+        <button class="btn" id="btn3" onclick="historyprint()">historyprint</button>
+        <button class="btn" id="btn4" onclick="javascript:location.reload()">reload</button>
+        <button class="btn" id="btn5" onclick="javascript:location.replace('https://www.naver.com')">replace</button>
+        <button class="btn" id="btn6" onclick="javascript:location.assign('https://www.naver.com')">assign</button>
+        <button class="btn" id="btn7" onclick="javascript:history.back()">back</button>
+        <button class="btn" id="btn8" onclick="javascript:history.forward()">forward</button>
+        <button class="btn" id="btn9" onclick="javascript:history.go(-1)">go</button>
+    </div>
+    <div id="res"></div>
+    <select name="sel" id="sel" onchange="moveSelect()">
+        <option value="">선택 안 함</option>
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.daum.net">다음</option>
+        <option value="http://www.google.com">구글</option>
+    </select>
+    <script src="./js13.js"></script>
+</body>
+</html>

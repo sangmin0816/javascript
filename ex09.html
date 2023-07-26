@@ -12,9 +12,9 @@
     <form action="" id="frm2" name="frm2">
         <input type="text" id="id" name="id" required>
         <button type="button" onclick="idcheck()">ID</button>
+        <input type="submit" value="제출">
     </form>
     <script>
-        // channel 
         // var win1 = window.open("login.html", "_parents"); // _parents, _blank, _self, _child
         // fullscreeon==yes||no||1||0 - 전체 화면 모드 여부
         // width-pixels: 창 너비
@@ -30,15 +30,14 @@
         // resizable = yes|no|1|0 창의 크기조절 가능 여부
 
         function idcheck(){
-            var id = document.getElementById(id);
-            console.log(id.value);
-            if(id==""){
+            var id = document.getElementById("id");
+            if(id.value==""){
                 alert("아이디 입력 칸이 비어있습니다.");
                 id.focus();
                 return false;
             }
             else{
-                var win1 = window.open("./idchek.html", "child", "width=400, height=300, top=100, left=100, location=no, menubar=no, toolbar=no")
+                var win1 = window.open("idcheck.html", "_child", "width=400, height=300, top=100, left=100, location=no, menubar=no, toolbar=no");
             }
         }
     </script>
